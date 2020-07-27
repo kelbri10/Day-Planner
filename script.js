@@ -29,7 +29,21 @@ const createPlanner = () =>{
         hour.setAttribute('class', 'col-md-2 hour'); 
 
         saveBtn.setAttribute('class', 'col-md-2 saveBtn fas fa-save'); 
-    
+
+        //when user clicks save button for timeblock the text is saved for that timeblock
+        //on click add event listener set value to localStorage 
+        saveBtn.addEventListener('click', function(){
+            
+            localStorage.setItem(time, event.value); 
+        }); 
+
+        //when user refreshes the page, the saved event is still existing
+        if (localStorage.getItem(time) === null){ 
+            event.value = ''; 
+        } else {
+            event.value = localStorage.getItem(time); 
+        }
+
         //adds hour event and save button to timeBlock div 
         timeBlock.append(hour, event, saveBtn); 
 
@@ -39,28 +53,22 @@ const createPlanner = () =>{
     }
 }
 
-const compareTime = (i, event) =>{
-        //compares iterator to the current hour to determine color appears
-        //to user 
-        let present = moment().get('hour'); 
+//compares iterator to the current hour to determine color appears
+//to user
+const compareTime = (i, event) =>{ 
+    //gets present time
+    let present = moment().get('hour'); 
 
-        //present displays red, past displays gray, future displays green
-        if(i === present){ 
-            event.setAttribute('class', 'col-md-8 description present'); 
-        } else if (i < present){ 
-            event.setAttribute('class', 'col-md-8 description past');
-        } else {
-            event.setAttribute('class', 'col-md-8 description future'); 
-        }
+    //present displays red, past displays gray, future displays green
+    if(i === present){ 
+        event.setAttribute('class', 'col-md-8 description present'); 
+    } else if (i < present){ 
+        event.setAttribute('class', 'col-md-8 description past');
+    } else {
+        event.setAttribute('class', 'col-md-8 description future'); 
+    }
 }
 
-
-//when user clicks a timeblock, user enters an event
-//on click add event listener allow user to type in text box 
-
-//when user clicks save button for timeblock the text is saved for that timeblock
-//on click add event listener set value to localStorage 
-
-//when user refreshes the page, the saved event is still existing
-
 createPlanner(); 
+
+
