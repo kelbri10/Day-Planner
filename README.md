@@ -3,7 +3,7 @@
 ## Table of Contents 
 1. [Description](#Description)
 2. [Installation](#Installation)
-3. [Usage](#Usage)
+3. [Getting Started](#GettingStarted)
 4. [Contributors](#Contributors)
 5. [License](#License)
 
