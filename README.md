@@ -19,7 +19,7 @@ When the user first enters the application, you are able to type into the text a
 ![Image of Day Planner](dayplanner.png)
 
 ## Contributors 
-This project was created by Kelsey Hughes. Check out their [Github Profile](https://github.com/kelbri10)
+This project was created by Kelsey Hughes. Check out their [Github Profile](https://github.com/kelbri10).
 
 ## License 
 This project is Open Source. 
